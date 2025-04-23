@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021 X1-BTC-PSBT-Firmware
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ in the file LICENSE.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_unlock.xml"
+    app:startDestination="@id/patternLockFragment">
+
+    <fragment
+        android:id="@id/patternLockFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.PatternLockFragment"
+        android:label="PatternLockFragment"
+        tools:layout="@layout/pattern_lock_fragment">
+        <action
+            android:id="@+id/action_to_passwordLockFragment"
+            app:destination="@id/passwordLockFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordLockFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.PasswordLockFragment"
+        android:label="PasswordLockFragment"
+        tools:layout="@layout/password_unlock">
+        <action
+            android:id="@+id/action_resetpassword_verifyMnemonic"
+            app:destination="@id/preImportFragment" />
+        <action
+            android:id="@+id/action_to_setPasswordFragment"
+            app:destination="@id/setPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/verifyMnemonicFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@id/verifyMnemonicFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.unlock.VerifyMnemonicFragment"
+        android:label="VerifyMnemonicFragment"
+        tools:layout="@layout/verify_mnemonic">
+        <action
+            android:id="@+id/action_to_setPasswordFragment"
+            app:destination="@id/setPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/verifyMnemonicFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/preImportFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.PreImportFragment"
+        android:label="PreImportShardingFragment"
+        tools:layout="@layout/pre_import_sharding">
+        <action
+            android:id="@+id/action_to_selectMnomenicCountFragment"
+            app:destination="@id/selectMnemonicCount"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectMnemonicCount"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.SelectMnomenicCountFragment"
+        android:label="SelectMnomenicCountFragment"
+        tools:layout="@layout/select_mnemonic_count">
+        <action
+            android:id="@id/action_to_verifyMnemonic"
+            app:destination="@id/verifyMnemonicFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.SetPasswordFragment"
+        android:label="SetPasswordFragment"
+        tools:layout="@layout/set_password" />
+    <fragment
+        android:id="@+id/fingerprintLockFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.FingerprintLockFragment"
+        android:label="FingerprintLockFragment"
+        tools:layout="@layout/fingerprint_lock_fragment">
+        <action
+            android:id="@+id/action_fingerprint_to_patternLockFragment"
+            app:destination="@id/patternLockFragment" />
+        <action
+            android:id="@+id/action_fingerprint_to_passwordLockFragment"
+            app:destination="@id/passwordLockFragment" />
+    </fragment>
+</navigation>

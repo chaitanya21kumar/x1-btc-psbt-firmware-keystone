@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021 X1-BTC-PSBT-Firmware
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ in the file LICENSE.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main.xml"
+    app:startDestination="@id/assetFragment">
+    <fragment
+        android:id="@+id/ScannerFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.scan.scanner.ScannerFragment"
+        android:label="ScannerFragment"
+        tools:layout="@layout/scanner_fragment">
+        <action
+            android:id="@+id/action_scanner_to_casaSignMessageFragment"
+            app:destination="@id/casaSignMessageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtSigleTxConfirmFragment"
+            app:destination="@id/psbtSigleTxConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtLegacyTxConfirmFragment"
+            app:destination="@id/psbtLegacyTxConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtCaravanTxConfirmFragment"
+            app:destination="@id/psbtCaravanTxConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtCasaTxConfirmFragment"
+            app:destination="@id/psbtCasaTxConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_txConfirmFragment"
+            app:destination="@id/txConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/import_multisig_wallet"
+            app:destination="@id/importWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_QRCodeScan_to_result"
+            app:destination="@id/webAuthResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/psbtLegacyTxConfirmFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.PsbtLegacyTxConfirmFragment"
+        android:label="PsbtLegacyTxConfirmFragment">
+        <action
+            android:id="@+id/action_to_psbt_broadcast"
+            app:destination="@id/psbtBroadcastTxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/psbtCaravanTxConfirmFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.caravan.PsbtCaravanTxConfirmFragment"
+        android:label="PsbtCaravanTxConfirmFragment">
+        <action
+            android:id="@+id/action_to_psbt_broadcast"
+            app:destination="@id/psbtBroadcastTxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/psbtCasaTxConfirmFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.PsbtCasaTxConfirmFragment"
+        android:label="PsbtCasaTxConfirmFragment">
+        <action
+            android:id="@+id/action_to_psbt_broadcast"
+            app:destination="@id/psbtBroadcastTxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/psbtSigleTxConfirmFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.PsbtSingleTxConfirmFragment"
+        android:label="PsbtSigleTxConfirmFragment">
+        <action
+            android:id="@+id/action_to_psbt_broadcast"
+            app:destination="@id/psbtBroadcastTxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_broadcastElectrumTxFragment"
+            app:destination="@id/broadcastElectrumTxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/patternLockFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.PatternLockFragment"
+        android:label="PatterLockFragment"
+        tools:layout="@layout/pattern_lock_fragment">
+        <action
+            android:id="@+id/action_unlock_to_assetList"
+            app:destination="@id/assetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/about_fragment" >
+
+        <action
+            android:id="@id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/setting_fragment">
+        <action
+            android:id="@id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_to_licenseFragment"
+            app:destination="@id/licenseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_versionFragment"
+            app:destination="@id/versionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_systemSettingFragment"
+            app:destination="@id/systemSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_fingerprintSettingFragment"
+            app:destination="@id/fingerprintSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_fingerprintGuideFragment"
+            app:destination="@id/fingerprintGuideFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_setPatternUnlock"
+            app:destination="@id/setPatternUnlockFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_change_password"
+            app:destination="@id/setPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_setting_to_setupVaultFragment"
+            app:destination="@id/setupVaultFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingFragment_to_whiteListFragment"
+            app:destination="@id/white_list_navigation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_settingFragment_to_passphraseFragment"
+            app:destination="@id/passphraseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_chooseWatchOnly"
+            app:destination="@id/chooseWatchOnly"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_switchNetwork"
+            app:destination="@id/switchNetworkFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/switchNetworkFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.SwitchNetworkFragment"
+        android:label="switchNetworkFragment">
+        <action
+            android:id="@id/action_to_chooseWatchOnly"
+            app:destination="@id/chooseWatchOnly"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseWatchOnly"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.ChooseWatchWalletFragment"
+        android:label="ChooseWatchOnlyFragment">
+        <action
+            android:id="@id/action_to_selectAddressFormatFragment"
+            app:destination="@id/selectAddressFormatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@id/action_to_export_xpub_guide"
+            app:destination="@id/exportXpubGuideFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/syncFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.SyncFragment"
+        android:label="SyncFragment"
+        tools:layout="@layout/sync_fragment" />
+
+    <fragment
+        android:id="@+id/mnemonicInputFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.MnemonicInputFragment"
+        android:label="MnemonicInputFragment"
+        tools:layout="@layout/mnemonic_input_fragment" />
+    <fragment
+        android:id="@+id/assetFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.AssetFragment"
+        android:label="AssetFragment"
+        tools:layout="@layout/asset_fragment">
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_to_receiveCoinFragment"
+            app:destination="@id/receiveCoinFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_txFragment"
+            app:destination="@id/txFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_export_xpub_guide"
+            app:destination="@id/exportXpubGuideFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_export_xpub_generic"
+            app:destination="@id/exportGenericXpubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_export_xpub_blue"
+            app:destination="@id/blueWalletExportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_txList"
+            app:destination="@id/txListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_scanner"
+            app:destination="@id/ScannerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_to_legacyMultisigFragment"
+            app:destination="@id/legacyMultisigFragment" />
+        <action
+            android:id="@+id/action_to_casaMultisigFragment"
+            app:destination="@id/casaMultisigFragment" />
+        <action
+            android:id="@+id/action_to_caravanMultisigFragment"
+            app:destination="@id/caravanMultisigFragment" />
+        <action
+            android:id="@+id/action_to_casaGuidePageOneFragment"
+            app:destination="@id/casaGuidePageOneFragment" />
+        <action
+            android:id="@+id/action_to_multisigSelectionFragment"
+            app:destination="@id/multisigSelectionFragment" />
+        <action
+            android:id="@+id/action_to_psbtListFragment"
+            app:destination="@id/psbtListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_walletInfoFragment"
+            app:destination="@id/walletInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/export_electrum_ypub"
+            app:destination="@id/electrumExportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@id/export_xpub_x1-btc-psbt-firmware"
+            app:destination="@id/syncFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exportGenericXpubFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.ExportGenericXpubFragment"
+        android:label="ExportGenericXpubFragment" />
+
+    <fragment
+        android:id="@+id/multisigSelectionFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.MultiSigPreferenceFragment"
+        android:label="MultisigEntry">
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_to_legacyMultisigFragment"
+            app:destination="@id/legacyMultisigFragment"
+            app:popUpTo="@+id/multisigSelectionFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_to_caravanMultisigFragment"
+            app:destination="@id/caravanMultisigFragment"
+            app:popUpTo="@+id/multisigSelectionFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_to_casaGuidePageOneFragment"
+            app:destination="@id/casaGuidePageOneFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/casaGuidePageOneFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.CasaGuidePageOneFragment"
+        android:label="CasaGuidePageOneFragment">
+        <action
+            android:id="@+id/action_to_casaGuidePageTwoFragment"
+            app:destination="@id/casaGuidePageTwoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/casaGuidePageTwoFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.CasaGuidePageTwoFragment"
+        android:label="CasaGuidePageTwoFragment">
+        <action
+            android:id="@+id/action_to_casaExportXPubFragment"
+            app:destination="@id/casaExportXPubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/casaSignMessageResultFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.CasaSignMessageResultFragment"
+        android:label="CasaSignMessageResultFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/casaSignMessageFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.CasaSignMessageFragment"
+        android:label="CasaSignMessageFragment">
+        <action
+            android:id="@+id/action_to_casaSignMessageResultFragment"
+            app:destination="@id/casaSignMessageResultFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/casaPerformHealthCheckFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.CasaPerformHealthCheckFragment"
+        android:label="casaPerformHealthCheckFragment">
+        <action
+            android:id="@+id/action_to_casaSignMessageFragment"
+            app:destination="@id/casaSignMessageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_scanner"
+            app:destination="@id/ScannerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/caravanMultisigFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.caravan.CaravanMainFragment"
+        android:label="MultisigEntry">
+        <action
+            android:id="@id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_to_legacyMultisigFragment"
+            app:destination="@id/legacyMultisigFragment"
+            app:popUpTo="@id/caravanMultisigFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_to_casaMultisigFragment"
+            app:destination="@id/casaMultisigFragment"
+            app:popUpTo="@id/caravanMultisigFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_to_casaGuidePageOneFragment"
+            app:destination="@id/casaGuidePageOneFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/import_multisig_file_list"
+            app:destination="@id/importMultisigFileList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_receiveCoinFragment"
+            app:destination="@id/receiveCoinFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/manage_multisig_wallet"
+            app:destination="@id/manageWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/create_multisig_wallet"
+            app:destination="@id/PreCreateMultiSigWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/export_caravan_expub"
+            app:destination="@id/exportCaravanExpubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtListFragment"
+            app:destination="@id/psbtListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_scanner"
+            app:destination="@id/ScannerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_multisig_wallet"
+            app:destination="@id/walletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_add_multisig_wallet"
+            app:destination="@id/caravanAddWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/caravanAddWalletFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.caravan.CaravanAddWalletFragment"
+        android:label="CaravanAddWalletFragment">
+        <action
+            android:id="@+id/export_caravan_expub"
+            app:destination="@id/exportCaravanExpubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/import_multisig_file_list"
+            app:destination="@id/importMultisigFileList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/create_multisig_wallet"
+            app:destination="@id/PreCreateMultiSigWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/casaMultisigFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.CasaMainFragment"
+        android:label="MultisigEntry">
+
+        <action
+            android:id="@id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_to_caravanMultisigFragment"
+            app:destination="@id/caravanMultisigFragment"
+            app:popUpTo="@id/casaMultisigFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_to_legacyMultisigFragment"
+            app:destination="@id/legacyMultisigFragment"
+            app:popUpTo="@id/casaMultisigFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_to_casaExportXPubFragment"
+            app:destination="@id/casaExportXPubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_scanner"
+            app:destination="@id/ScannerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_casaPerformHealthCheckFragment"
+            app:destination="@id/casaPerformHealthCheckFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtSignedCasaFragment"
+            app:destination="@id/psbtSignedCasaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtListFragment"
+            app:destination="@id/psbtListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/casaExportXPubFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.CasaExportXPubFragment"
+        android:label="CasaExportXPubFragment">
+        <action
+            android:id="@+id/action_to_casaMultisigFragment"
+            app:destination="@id/casaMultisigFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/legacyMultisigFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.MultisigMainFragment"
+        android:label="MultisigEntry">
+        <action
+            android:id="@id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_to_caravanMultisigFragment"
+            app:destination="@id/caravanMultisigFragment"
+            app:popUpTo="@id/legacyMultisigFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_to_casaMultisigFragment"
+            app:destination="@id/casaMultisigFragment"
+            app:popUpTo="@id/legacyMultisigFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_to_casaGuidePageOneFragment"
+            app:destination="@id/casaGuidePageOneFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/export_export_multisig_expub"
+            app:destination="@id/exportMultisigExpubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/create_multisig_wallet"
+            app:destination="@id/PreCreateMultiSigWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/import_multisig_file_list"
+            app:destination="@id/importMultisigFileList"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/manage_multisig_wallet"
+            app:destination="@id/manageWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@id/action_to_receiveCoinFragment"
+            app:destination="@id/receiveCoinFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_multisig_wallet"
+            app:destination="@id/walletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@id/action_to_psbtListFragment"
+            app:destination="@id/psbtListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_scanner"
+            app:destination="@id/ScannerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/exportMultisigExpubFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.common.ExportMultisigExpubFragment"
+        android:label="ExportMultisigExpubFragment" />
+    <fragment
+        android:id="@+id/exportCaravanExpubFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.caravan.ExportCaravanExpubFragment"
+        android:label="ExportCaravanExpubFragment" />
+
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.WalletFragment"
+        android:label="WalletFragment">
+        <action
+            android:id="@id/action_to_txList"
+            app:destination="@id/txListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_export_wallet_to_cosigner"
+            app:destination="@id/exportWalletToCosignerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_export_caravan_wallet_to_cosigner"
+            app:destination="@id/exportCaravanWalletToCosignerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_export_wallet_to_caravan"
+            app:destination="@id/exportWalletToCosignerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_export_multisig_wallet_watch_only_guide"
+            app:destination="@id/exportMultiSigWalletToWatchWalletGuide"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_multisig_wallet_info"
+            app:destination="@id/multisigWalletInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_export_multisig_wallet_to_watch_only_wallet"
+            app:destination="@id/exportMultiSigWalletToWatchWallet"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exportMultiSigWalletToWatchWalletGuide"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.ExportMultiSigWalletToWatchWalletGuide"
+        android:label="ExportMultiSigWalletToWatchWalletGuide">
+        <action
+            android:id="@+id/action_to_export_multisig_xpub_to_el"
+            app:destination="@id/exportXpubToElectrumFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/exportMultiSigWalletToWatchWallet"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.ExportMultiSigWalletToWatchWallet"
+        android:label="ExportMultiSigWalletToWatchWallet" />
+
+    <fragment
+        android:id="@+id/exportXpubToElectrumFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.ExportXpubToElectrumFragment"
+        android:label="ExportXpubToElectrumFragment" />
+
+    <fragment
+        android:id="@+id/multisigWalletInfoFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.MultisigWalletInfoFragment"
+        android:label="MultisigWalletInfoFragment" />
+
+    <fragment
+        android:id="@+id/exportWalletToCosignerFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.ExportWalletToCosignerFragment"
+        android:label="ExportWalletToCosignerFragment">
+        <action
+            android:id="@id/action_export_multisig_wallet_watch_only_guide"
+            app:destination="@id/exportMultiSigWalletToWatchWalletGuide"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exportCaravanWalletToCosignerFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.caravan.ExportCaravanWalletToCosignerFragment"
+        android:label="ExportCaravanWalletToCosignerFragment">
+        <action
+            android:id="@+id/action_export_caravan_watch_only_guide"
+            app:destination="@id/exportCaravanWatchWalletGuide"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exportCaravanWatchWalletGuide"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.caravan.ExportCaravanWatchWalletGuide"
+        android:label="ExportCaravanWatchWalletGuide">
+        <action
+            android:id="@+id/action_to_export_multisig_wallet_to_watch_only_wallet"
+            app:destination="@id/exportMultiSigWalletToWatchWallet"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/manageWalletFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.ManageWalletFragment"
+        android:label="ManageWalletFragment">
+        <action
+            android:id="@id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/importMultisigFileList"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.ImportMultisigFileList"
+        android:label="ImportMultisigFileList">
+        <action
+            android:id="@+id/import_multisig_wallet"
+            app:destination="@id/importWalletFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_scanner"
+            app:destination="@id/ScannerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/importWalletFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.ImportWalletFragment"
+        android:label="ImportWalletFragment">
+        <action
+            android:id="@id/action_export_multisig_wallet_watch_only_guide"
+            app:destination="@id/exportMultiSigWalletToWatchWalletGuide"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PreCreateMultiSigWalletFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.PreCreateMultiSigWalletFragment"
+        android:label="PreCreateMultiSigWalletFragment">
+        <action
+            android:id="@+id/action_to_collect_expubs"
+            app:destination="@id/collectExpubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/collectExpubFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.legacy.CollectExpubFragment"
+        android:label="CollectExpubFragment">
+        <action
+            android:id="@+id/action_to_scanner"
+            app:destination="@id/ScannerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_export_wallet_to_cosigner"
+            app:destination="@id/exportWalletToCosignerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_export_caravan_wallet_to_cosigner"
+            app:destination="@id/exportCaravanWalletToCosignerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_export_caravan_watch_only_guide"
+            app:destination="@id/exportCaravanWatchWalletGuide"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/psbtListFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.PsbtListFragment"
+        android:label="PsbtListFragment">
+        <action
+            android:id="@+id/action_to_psbtSigleTxConfirmFragment"
+            app:destination="@id/psbtSigleTxConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtLegacyTxConfirmFragment"
+            app:destination="@id/psbtLegacyTxConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtCasaTxConfirmFragment"
+            app:destination="@id/psbtCasaTxConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_psbtCaravanTxConfirmFragment"
+            app:destination="@id/psbtCaravanTxConfirmFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/walletInfoFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.WalletInfoFragment"
+        android:label="WalletInfoFragment"
+        tools:layout="@layout/wallet_info">
+        <action
+            android:id="@+id/action_to_selectAddressFormatFragment"
+            app:destination="@id/selectAddressFormatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@id/selectAddressFormatFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.SelectAddressFormatFragment"
+        android:label="SelectAddressFormatFragment">
+        <action
+            android:id="@id/action_to_export_xpub_guide"
+            app:destination="@id/exportXpubGuideFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_export_xpub_generic"
+            app:destination="@id/exportGenericXpubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/txListFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.TxListFragment"
+        android:label="TxListFragment"
+        tools:layout="@layout/export_xpub_guide">
+        <action
+            android:id="@+id/action_to_electrumTxFragment"
+            app:destination="@id/electrumTxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_to_psbtSignedTxFragment"
+            app:destination="@id/psbtSignedTxFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_txFragment"
+            app:destination="@id/txFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/psbtSignedTxFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.PsbtSignedTxFragment"
+        android:label="PsbtSignedTxFragment" />
+
+    <fragment
+        android:id="@+id/psbtSignedCasaFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.multisigs.casa.CasaSignedPsbtFragment"
+        android:label="PsbtSignedCasaFragment" />
+
+    <fragment
+        android:id="@+id/exportXpubGuideFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.electrum.ExportXpubGuideFragment"
+        android:label="ElectrumGuideFragment"
+        tools:layout="@layout/export_xpub_guide">
+        <action
+            android:id="@+id/export_electrum_ypub"
+            app:destination="@id/electrumExportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/export_xpub_x1-btc-psbt-firmware"
+            app:destination="@id/syncFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_export_xpub_blue"
+            app:destination="@id/blueWalletExportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_export_xpub_generic"
+            app:destination="@id/exportGenericXpubFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/electrumExportFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.electrum.ElectrumExportFragment"
+        android:label="ElectrumExportFragment"
+        tools:layout="@layout/psbt_export" />
+    <fragment
+        android:id="@+id/txConfirmFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.TxConfirmFragment"
+        android:label="TxConfirmFragment"
+        tools:layout="@layout/tx_confirm_fragment">
+        <action
+            android:id="@+id/action_to_broadcastTxFragment"
+            app:destination="@id/broadcastTxFragment" />
+
+        <action
+            android:id="@id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@id/action_to_preImportFragment"
+            app:destination="@id/preImportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_txFragment"
+            app:destination="@id/txFragment" />
+        <action
+            android:id="@id/action_to_electrumTxFragment"
+            app:destination="@id/electrumTxFragment" />
+        <action
+            android:id="@id/action_to_psbtSignedTxFragment"
+            app:destination="@id/psbtSignedTxFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/broadcastTxFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.BroadcastTxFragment"
+        android:label="BroadcastTxFragment"
+        tools:layout="@layout/broadcast_tx_fragment">
+        <action
+            android:id="@+id/action_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/broadcastElectrumTxFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.electrum.ElectrumBroadcastTxFragment"
+        android:label="ElectrumBroadcastTxFragment"
+        tools:layout="@layout/broadcast_electrum_tx_fragment" />
+
+    <fragment
+        android:id="@+id/receiveCoinFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.ReceiveCoinFragment"
+        android:label="ReceiveCoinFragment"
+        tools:layout="@layout/receive_fragment" />
+    <fragment
+        android:id="@+id/licenseFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.LicenseFragment"
+        android:label="PrivacyPolicyFragment"
+        tools:layout="@layout/privacy_policy" />
+    <fragment
+        android:id="@+id/versionFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.VersionFragment"
+        android:label="VersionFragment"
+        tools:layout="@layout/version" />
+    <fragment
+        android:id="@+id/verifyMnemonicFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.unlock.VerifyMnemonicFragment"
+        android:label="VerifyMnemonicFragment"
+        tools:layout="@layout/verify_mnemonic">
+        <action
+            android:id="@+id/action_to_setPasswordFragment"
+            app:destination="@id/setPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/verifyMnemonicFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/systemSettingFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.SystemSettingFragment"
+        android:label="SystemSettingFragment"
+        tools:layout="@layout/system_setting">
+        <action
+            android:id="@+id/action_to_languagePreferenceFragment"
+            app:destination="@id/languagePreferenceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_screenOffPreferenceFragment"
+            app:destination="@id/screenOffPreferenceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_to_brightnessSettingFragment"
+            app:destination="@id/brightnessSettingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fingerprintSettingFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.FingerprintSettingFragment"
+        android:label="FingerprintPreferenceFragment"
+        tools:layout="@layout/fingerprint_setting">
+
+        <action
+            android:id="@+id/action_to_fingerprintManage"
+            app:destination="@id/fingerprintManageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@id/action_to_fingerprintEnrollFragment"
+            app:destination="@id/fingerprintEnrollFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/languagePreferenceFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.LanguagePreferenceFragment"
+        android:label="ListPreferenceFragment"
+        tools:layout="@layout/list_preference" />
+    <fragment
+        android:id="@+id/screenOffPreferenceFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.ScreenOffPreferenceFragment"
+        android:label="ScreenOffPreferenceFragment"
+        tools:layout="@layout/list_preference" />
+    <fragment
+        android:id="@+id/brightnessSettingFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.BrightnessSettingFragment"
+        android:label="BrightnessSettingFragment"
+        tools:layout="@layout/brightness_setting" />
+    <action
+        android:id="@+id/action_to_patterLockFragment"
+        app:destination="@id/patternLockFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/patternLockFragment"
+        app:popUpToInclusive="false" />
+    <fragment
+        android:id="@+id/txFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.TxFragment"
+        android:label="TxFragment"
+        tools:layout="@layout/tx" />
+    <fragment
+        android:id="@+id/electrumTxFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.electrum.SignedTxFragment"
+        android:label="ElectrumTxFragment"
+        tools:layout="@layout/signed_tx" />
+    <fragment
+        android:id="@+id/setPatternUnlockFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.SetPatternUnlockFragment"
+        android:label="SetPatternUnlockFragment"
+        tools:layout="@layout/set_pattern_unlock" />
+
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.SetPasswordFragment"
+        android:label="SetPasswordFragment"
+        tools:layout="@layout/set_password" />
+    <fragment
+        android:id="@+id/setupVaultFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.SetupVaultFragment"
+        android:label="SetupVaultFragment"
+        tools:layout="@layout/setup_vault" />
+    <fragment
+        android:id="@id/webAuthResultFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.WebAuthResultFragment"
+        android:label="WebAuthResultFragment"
+        tools:layout="@layout/web_auth_result">
+        <action
+            android:id="@+id/action_auth_to_home"
+            app:destination="@id/assetFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/assetFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <include app:graph="@navigation/nav_graph_white_list" />
+    <fragment
+        android:id="@+id/fingerprintGuideFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.FingerprintGuideFragment"
+        android:label="FingerprintGuide"
+        tools:layout="@layout/fingerprint_guide">
+        <action
+            android:id="@+id/action_to_fingerprintEnrollFragment"
+            app:destination="@id/fingerprintEnrollFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/fingerprintGuideFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fingerprintEnrollFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.FingerprintEnrollFragment"
+        android:label="FingerprintEnrollFragment"
+        tools:layout="@layout/fingerprint_enroll">
+        <action
+            android:id="@+id/action_enroll_to_fingerprintSettingFragment"
+            app:destination="@id/fingerprintSettingFragment"
+            app:popUpTo="@id/settingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fingerprintManageFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setting.FingerprintManageFragment"
+        android:label="FingerprintManageFragment"
+        tools:layout="@layout/fingerprint_manage" />
+
+    <fragment
+        android:id="@+id/passphraseFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.PassphraseFragment"
+        android:label="passphraseFragment"
+        tools:layout="@layout/passphrase">
+        <action
+            android:id="@+id/to_assetListFragment"
+            app:destination="@id/assetFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/preImportFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.PreImportFragment"
+        android:label="PreImportShardingFragment"
+        tools:layout="@layout/pre_import_sharding">
+        <action
+            android:id="@+id/action_to_selectMnomenicCountFragment"
+            app:destination="@id/selectMnemonicCount"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/blueWalletExportFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.BlueWalletExportFragment"
+        android:label="blueWalletExportFragment"
+        tools:layout="@layout/blue_export" />
+
+    <fragment
+        android:id="@+id/psbtBroadcastTxFragment"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.main.PsbtBroadcastTxFragment"
+        android:label="PsbtBroadcastTxFragment"
+        tools:layout="@layout/broadcast_psbt_tx_fragment" />
+
+    <fragment
+        android:id="@+id/selectMnemonicCount"
+        android:name="com.x1-btc-psbt-firmware.cold.ui.fragment.setup.SelectMnomenicCountFragment"
+        android:label="SelectMnomenicCountFragment"
+        tools:layout="@layout/select_mnemonic_count">
+        <action
+            android:id="@+id/action_to_verifyMnemonic"
+            app:destination="@id/verifyMnemonicFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+</navigation>
